@@ -2,7 +2,7 @@
 
 ## Overfitting Detection Framework for Options Backtesting
 
-This repository contains educational materials presented to the SMB Options Mastermind Group, focusing on advanced statistical methods for detecting overfitting in options trading strategies.
+This repository contains educational materials presented to the SMB Options Tribe, a leading international options trading mastermind group. The materials focus on advanced statistical methods for detecting overfitting in options trading strategies.
 
 ### Overview
 
