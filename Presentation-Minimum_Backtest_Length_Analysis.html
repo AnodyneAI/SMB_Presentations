@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presentation-Minimum_Backtest_Length_Analysis</title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+  </style>
+  <style>
+  /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+  </style>
+  <style>
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
+@font-face {
+  font-family: 'KaTeX_AMS';
+  src: url(fonts/KaTeX_AMS-Regular.woff2) format('woff2'), url(fonts/KaTeX_AMS-Regular.woff) format('woff'), url(fonts/KaTeX_AMS-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Caligraphic';
+  src: url(fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(fonts/KaTeX_Caligraphic-Bold.woff) format('woff'), url(fonts/KaTeX_Caligraphic-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Caligraphic';
+  src: url(fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'), url(fonts/KaTeX_Caligraphic-Regular.woff) format('woff'), url(fonts/KaTeX_Caligraphic-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Fraktur';
+  src: url(fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'), url(fonts/KaTeX_Fraktur-Bold.woff) format('woff'), url(fonts/KaTeX_Fraktur-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Fraktur';
+  src: url(fonts/KaTeX_Fraktur-Regular.woff2) format('woff2'), url(fonts/KaTeX_Fraktur-Regular.woff) format('woff'), url(fonts/KaTeX_Fraktur-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Main';
+  src: url(fonts/KaTeX_Main-Bold.woff2) format('woff2'), url(fonts/KaTeX_Main-Bold.woff) format('woff'), url(fonts/KaTeX_Main-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Main';
+  src: url(fonts/KaTeX_Main-BoldItalic.woff2) format('woff2'), url(fonts/KaTeX_Main-BoldItalic.woff) format('woff'), url(fonts/KaTeX_Main-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'KaTeX_Main';
+  src: url(fonts/KaTeX_Main-Italic.woff2) format('woff2'), url(fonts/KaTeX_Main-Italic.woff) format('woff'), url(fonts/KaTeX_Main-Italic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'KaTeX_Main';
+  src: url(fonts/KaTeX_Main-Regular.woff2) format('woff2'), url(fonts/KaTeX_Main-Regular.woff) format('woff'), url(fonts/KaTeX_Main-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Math';
+  src: url(fonts/KaTeX_Math-BoldItalic.woff2) format('woff2'), url(fonts/KaTeX_Math-BoldItalic.woff) format('woff'), url(fonts/KaTeX_Math-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'KaTeX_Math';
+  src: url(fonts/KaTeX_Math-Italic.woff2) format('woff2'), url(fonts/KaTeX_Math-Italic.woff) format('woff'), url(fonts/KaTeX_Math-Italic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'KaTeX_SansSerif';
+  src: url(fonts/KaTeX_SansSerif-Bold.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Bold.woff) format('woff'), url(fonts/KaTeX_SansSerif-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_SansSerif';
+  src: url(fonts/KaTeX_SansSerif-Italic.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Italic.woff) format('woff'), url(fonts/KaTeX_SansSerif-Italic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'KaTeX_SansSerif';
+  src: url(fonts/KaTeX_SansSerif-Regular.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Regular.woff) format('woff'), url(fonts/KaTeX_SansSerif-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Script';
+  src: url(fonts/KaTeX_Script-Regular.woff2) format('woff2'), url(fonts/KaTeX_Script-Regular.woff) format('woff'), url(fonts/KaTeX_Script-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Size1';
+  src: url(fonts/KaTeX_Size1-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size1-Regular.woff) format('woff'), url(fonts/KaTeX_Size1-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Size2';
+  src: url(fonts/KaTeX_Size2-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size2-Regular.woff) format('woff'), url(fonts/KaTeX_Size2-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Size3';
+  src: url(fonts/KaTeX_Size3-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size3-Regular.woff) format('woff'), url(fonts/KaTeX_Size3-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Size4';
+  src: url(fonts/KaTeX_Size4-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size4-Regular.woff) format('woff'), url(fonts/KaTeX_Size4-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KaTeX_Typewriter';
+  src: url(fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'), url(fonts/KaTeX_Typewriter-Regular.woff) format('woff'), url(fonts/KaTeX_Typewriter-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.katex {
+  font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+  line-height: 1.2;
+  text-indent: 0;
+  text-rendering: auto;
+}
+.katex * {
+  -ms-high-contrast-adjust: none !important;
+  border-color: currentColor;
+}
+.katex .katex-version::after {
+  content: "0.15.2";
+}
+.katex .katex-mathml {
+  /* Accessibility hack to only show to screen readers
+         Found at: http://a11yproject.com/posts/how-to-hide-content/ */
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.katex .katex-html {
+  /* \newline is an empty block at top level, between .base elements */
+}
+.katex .katex-html > .newline {
+  display: block;
+}
+.katex .base {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+.katex .strut {
+  display: inline-block;
+}
+.katex .textbf {
+  font-weight: bold;
+}
+.katex .textit {
+  font-style: italic;
+}
+.katex .textrm {
+  font-family: KaTeX_Main;
+}
+.katex .textsf {
+  font-family: KaTeX_SansSerif;
+}
+.katex .texttt {
+  font-family: KaTeX_Typewriter;
+}
+.katex .mathnormal {
+  font-family: KaTeX_Math;
+  font-style: italic;
+}
+.katex .mathit {
+  font-family: KaTeX_Main;
+  font-style: italic;
+}
+.katex .mathrm {
+  font-style: normal;
+}
+.katex .mathbf {
+  font-family: KaTeX_Main;
+  font-weight: bold;
+}
+.katex .boldsymbol {
+  font-family: KaTeX_Math;
+  font-weight: bold;
+  font-style: italic;
+}
+.katex .amsrm {
+  font-family: KaTeX_AMS;
+}
+.katex .mathbb,
+.katex .textbb {
+  font-family: KaTeX_AMS;
+}
+.katex .mathcal {
+  font-family: KaTeX_Caligraphic;
+}
+.katex .mathfrak,
+.katex .textfrak {
+  font-family: KaTeX_Fraktur;
+}
+.katex .mathtt {
+  font-family: KaTeX_Typewriter;
+}
+.katex .mathscr,
+.katex .textscr {
+  font-family: KaTeX_Script;
+}
+.katex .mathsf,
+.katex .textsf {
+  font-family: KaTeX_SansSerif;
+}
+.katex .mathboldsf,
+.katex .textboldsf {
+  font-family: KaTeX_SansSerif;
+  font-weight: bold;
+}
+.katex .mathitsf,
+.katex .textitsf {
+  font-family: KaTeX_SansSerif;
+  font-style: italic;
+}
+.katex .mainrm {
+  font-family: KaTeX_Main;
+  font-style: normal;
+}
+.katex .vlist-t {
+  display: inline-table;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.katex .vlist-r {
+  display: table-row;
+}
+.katex .vlist {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+}
+.katex .vlist > span {
+  display: block;
+  height: 0;
+  position: relative;
+}
+.katex .vlist > span > span {
+  display: inline-block;
+}
+.katex .vlist > span > .pstrut {
+  overflow: hidden;
+  width: 0;
+}
+.katex .vlist-t2 {
+  margin-right: -2px;
+}
+.katex .vlist-s {
+  display: table-cell;
+  vertical-align: bottom;
+  font-size: 1px;
+  width: 2px;
+  min-width: 2px;
+}
+.katex .vbox {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.katex .hbox {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+}
+.katex .thinbox {
+  display: inline-flex;
+  flex-direction: row;
+  width: 0;
+  max-width: 0;
+}
+.katex .msupsub {
+  text-align: left;
+}
+.katex .mfrac > span > span {
+  text-align: center;
+}
+.katex .mfrac .frac-line {
+  display: inline-block;
+  width: 100%;
+  border-bottom-style: solid;
+}
+.katex .mfrac .frac-line,
+.katex .overline .overline-line,
+.katex .underline .underline-line,
+.katex .hline,
+.katex .hdashline,
+.katex .rule {
+  min-height: 1px;
+}
+.katex .mspace {
+  display: inline-block;
+}
+.katex .llap,
+.katex .rlap,
+.katex .clap {
+  width: 0;
+  position: relative;
+}
+.katex .llap > .inner,
+.katex .rlap > .inner,
+.katex .clap > .inner {
+  position: absolute;
+}
+.katex .llap > .fix,
+.katex .rlap > .fix,
+.katex .clap > .fix {
+  display: inline-block;
+}
+.katex .llap > .inner {
+  right: 0;
+}
+.katex .rlap > .inner,
+.katex .clap > .inner {
+  left: 0;
+}
+.katex .clap > .inner > span {
+  margin-left: -50%;
+  margin-right: 50%;
+}
+.katex .rule {
+  display: inline-block;
+  border: solid 0;
+  position: relative;
+}
+.katex .overline .overline-line,
+.katex .underline .underline-line,
+.katex .hline {
+  display: inline-block;
+  width: 100%;
+  border-bottom-style: solid;
+}
+.katex .hdashline {
+  display: inline-block;
+  width: 100%;
+  border-bottom-style: dashed;
+}
+.katex .sqrt > .root {
+  /* These values are taken from the definition of `\r@@t`,
+             `\mkern 5mu` and `\mkern -10mu`. */
+  margin-left: 0.27777778em;
+  margin-right: -0.55555556em;
+}
+.katex .sizing.reset-size1.size1,
+.katex .fontsize-ensurer.reset-size1.size1 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size1.size2,
+.katex .fontsize-ensurer.reset-size1.size2 {
+  font-size: 1.2em;
+}
+.katex .sizing.reset-size1.size3,
+.katex .fontsize-ensurer.reset-size1.size3 {
+  font-size: 1.4em;
+}
+.katex .sizing.reset-size1.size4,
+.katex .fontsize-ensurer.reset-size1.size4 {
+  font-size: 1.6em;
+}
+.katex .sizing.reset-size1.size5,
+.katex .fontsize-ensurer.reset-size1.size5 {
+  font-size: 1.8em;
+}
+.katex .sizing.reset-size1.size6,
+.katex .fontsize-ensurer.reset-size1.size6 {
+  font-size: 2em;
+}
+.katex .sizing.reset-size1.size7,
+.katex .fontsize-ensurer.reset-size1.size7 {
+  font-size: 2.4em;
+}
+.katex .sizing.reset-size1.size8,
+.katex .fontsize-ensurer.reset-size1.size8 {
+  font-size: 2.88em;
+}
+.katex .sizing.reset-size1.size9,
+.katex .fontsize-ensurer.reset-size1.size9 {
+  font-size: 3.456em;
+}
+.katex .sizing.reset-size1.size10,
+.katex .fontsize-ensurer.reset-size1.size10 {
+  font-size: 4.148em;
+}
+.katex .sizing.reset-size1.size11,
+.katex .fontsize-ensurer.reset-size1.size11 {
+  font-size: 4.976em;
+}
+.katex .sizing.reset-size2.size1,
+.katex .fontsize-ensurer.reset-size2.size1 {
+  font-size: 0.83333333em;
+}
+.katex .sizing.reset-size2.size2,
+.katex .fontsize-ensurer.reset-size2.size2 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size2.size3,
+.katex .fontsize-ensurer.reset-size2.size3 {
+  font-size: 1.16666667em;
+}
+.katex .sizing.reset-size2.size4,
+.katex .fontsize-ensurer.reset-size2.size4 {
+  font-size: 1.33333333em;
+}
+.katex .sizing.reset-size2.size5,
+.katex .fontsize-ensurer.reset-size2.size5 {
+  font-size: 1.5em;
+}
+.katex .sizing.reset-size2.size6,
+.katex .fontsize-ensurer.reset-size2.size6 {
+  font-size: 1.66666667em;
+}
+.katex .sizing.reset-size2.size7,
+.katex .fontsize-ensurer.reset-size2.size7 {
+  font-size: 2em;
+}
+.katex .sizing.reset-size2.size8,
+.katex .fontsize-ensurer.reset-size2.size8 {
+  font-size: 2.4em;
+}
+.katex .sizing.reset-size2.size9,
+.katex .fontsize-ensurer.reset-size2.size9 {
+  font-size: 2.88em;
+}
+.katex .sizing.reset-size2.size10,
+.katex .fontsize-ensurer.reset-size2.size10 {
+  font-size: 3.45666667em;
+}
+.katex .sizing.reset-size2.size11,
+.katex .fontsize-ensurer.reset-size2.size11 {
+  font-size: 4.14666667em;
+}
+.katex .sizing.reset-size3.size1,
+.katex .fontsize-ensurer.reset-size3.size1 {
+  font-size: 0.71428571em;
+}
+.katex .sizing.reset-size3.size2,
+.katex .fontsize-ensurer.reset-size3.size2 {
+  font-size: 0.85714286em;
+}
+.katex .sizing.reset-size3.size3,
+.katex .fontsize-ensurer.reset-size3.size3 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size3.size4,
+.katex .fontsize-ensurer.reset-size3.size4 {
+  font-size: 1.14285714em;
+}
+.katex .sizing.reset-size3.size5,
+.katex .fontsize-ensurer.reset-size3.size5 {
+  font-size: 1.28571429em;
+}
+.katex .sizing.reset-size3.size6,
+.katex .fontsize-ensurer.reset-size3.size6 {
+  font-size: 1.42857143em;
+}
+.katex .sizing.reset-size3.size7,
+.katex .fontsize-ensurer.reset-size3.size7 {
+  font-size: 1.71428571em;
+}
+.katex .sizing.reset-size3.size8,
+.katex .fontsize-ensurer.reset-size3.size8 {
+  font-size: 2.05714286em;
+}
+.katex .sizing.reset-size3.size9,
+.katex .fontsize-ensurer.reset-size3.size9 {
+  font-size: 2.46857143em;
+}
+.katex .sizing.reset-size3.size10,
+.katex .fontsize-ensurer.reset-size3.size10 {
+  font-size: 2.96285714em;
+}
+.katex .sizing.reset-size3.size11,
+.katex .fontsize-ensurer.reset-size3.size11 {
+  font-size: 3.55428571em;
+}
+.katex .sizing.reset-size4.size1,
+.katex .fontsize-ensurer.reset-size4.size1 {
+  font-size: 0.625em;
+}
+.katex .sizing.reset-size4.size2,
+.katex .fontsize-ensurer.reset-size4.size2 {
+  font-size: 0.75em;
+}
+.katex .sizing.reset-size4.size3,
+.katex .fontsize-ensurer.reset-size4.size3 {
+  font-size: 0.875em;
+}
+.katex .sizing.reset-size4.size4,
+.katex .fontsize-ensurer.reset-size4.size4 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size4.size5,
+.katex .fontsize-ensurer.reset-size4.size5 {
+  font-size: 1.125em;
+}
+.katex .sizing.reset-size4.size6,
+.katex .fontsize-ensurer.reset-size4.size6 {
+  font-size: 1.25em;
+}
+.katex .sizing.reset-size4.size7,
+.katex .fontsize-ensurer.reset-size4.size7 {
+  font-size: 1.5em;
+}
+.katex .sizing.reset-size4.size8,
+.katex .fontsize-ensurer.reset-size4.size8 {
+  font-size: 1.8em;
+}
+.katex .sizing.reset-size4.size9,
+.katex .fontsize-ensurer.reset-size4.size9 {
+  font-size: 2.16em;
+}
+.katex .sizing.reset-size4.size10,
+.katex .fontsize-ensurer.reset-size4.size10 {
+  font-size: 2.5925em;
+}
+.katex .sizing.reset-size4.size11,
+.katex .fontsize-ensurer.reset-size4.size11 {
+  font-size: 3.11em;
+}
+.katex .sizing.reset-size5.size1,
+.katex .fontsize-ensurer.reset-size5.size1 {
+  font-size: 0.55555556em;
+}
+.katex .sizing.reset-size5.size2,
+.katex .fontsize-ensurer.reset-size5.size2 {
+  font-size: 0.66666667em;
+}
+.katex .sizing.reset-size5.size3,
+.katex .fontsize-ensurer.reset-size5.size3 {
+  font-size: 0.77777778em;
+}
+.katex .sizing.reset-size5.size4,
+.katex .fontsize-ensurer.reset-size5.size4 {
+  font-size: 0.88888889em;
+}
+.katex .sizing.reset-size5.size5,
+.katex .fontsize-ensurer.reset-size5.size5 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size5.size6,
+.katex .fontsize-ensurer.reset-size5.size6 {
+  font-size: 1.11111111em;
+}
+.katex .sizing.reset-size5.size7,
+.katex .fontsize-ensurer.reset-size5.size7 {
+  font-size: 1.33333333em;
+}
+.katex .sizing.reset-size5.size8,
+.katex .fontsize-ensurer.reset-size5.size8 {
+  font-size: 1.6em;
+}
+.katex .sizing.reset-size5.size9,
+.katex .fontsize-ensurer.reset-size5.size9 {
+  font-size: 1.92em;
+}
+.katex .sizing.reset-size5.size10,
+.katex .fontsize-ensurer.reset-size5.size10 {
+  font-size: 2.30444444em;
+}
+.katex .sizing.reset-size5.size11,
+.katex .fontsize-ensurer.reset-size5.size11 {
+  font-size: 2.76444444em;
+}
+.katex .sizing.reset-size6.size1,
+.katex .fontsize-ensurer.reset-size6.size1 {
+  font-size: 0.5em;
+}
+.katex .sizing.reset-size6.size2,
+.katex .fontsize-ensurer.reset-size6.size2 {
+  font-size: 0.6em;
+}
+.katex .sizing.reset-size6.size3,
+.katex .fontsize-ensurer.reset-size6.size3 {
+  font-size: 0.7em;
+}
+.katex .sizing.reset-size6.size4,
+.katex .fontsize-ensurer.reset-size6.size4 {
+  font-size: 0.8em;
+}
+.katex .sizing.reset-size6.size5,
+.katex .fontsize-ensurer.reset-size6.size5 {
+  font-size: 0.9em;
+}
+.katex .sizing.reset-size6.size6,
+.katex .fontsize-ensurer.reset-size6.size6 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size6.size7,
+.katex .fontsize-ensurer.reset-size6.size7 {
+  font-size: 1.2em;
+}
+.katex .sizing.reset-size6.size8,
+.katex .fontsize-ensurer.reset-size6.size8 {
+  font-size: 1.44em;
+}
+.katex .sizing.reset-size6.size9,
+.katex .fontsize-ensurer.reset-size6.size9 {
+  font-size: 1.728em;
+}
+.katex .sizing.reset-size6.size10,
+.katex .fontsize-ensurer.reset-size6.size10 {
+  font-size: 2.074em;
+}
+.katex .sizing.reset-size6.size11,
+.katex .fontsize-ensurer.reset-size6.size11 {
+  font-size: 2.488em;
+}
+.katex .sizing.reset-size7.size1,
+.katex .fontsize-ensurer.reset-size7.size1 {
+  font-size: 0.41666667em;
+}
+.katex .sizing.reset-size7.size2,
+.katex .fontsize-ensurer.reset-size7.size2 {
+  font-size: 0.5em;
+}
+.katex .sizing.reset-size7.size3,
+.katex .fontsize-ensurer.reset-size7.size3 {
+  font-size: 0.58333333em;
+}
+.katex .sizing.reset-size7.size4,
+.katex .fontsize-ensurer.reset-size7.size4 {
+  font-size: 0.66666667em;
+}
+.katex .sizing.reset-size7.size5,
+.katex .fontsize-ensurer.reset-size7.size5 {
+  font-size: 0.75em;
+}
+.katex .sizing.reset-size7.size6,
+.katex .fontsize-ensurer.reset-size7.size6 {
+  font-size: 0.83333333em;
+}
+.katex .sizing.reset-size7.size7,
+.katex .fontsize-ensurer.reset-size7.size7 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size7.size8,
+.katex .fontsize-ensurer.reset-size7.size8 {
+  font-size: 1.2em;
+}
+.katex .sizing.reset-size7.size9,
+.katex .fontsize-ensurer.reset-size7.size9 {
+  font-size: 1.44em;
+}
+.katex .sizing.reset-size7.size10,
+.katex .fontsize-ensurer.reset-size7.size10 {
+  font-size: 1.72833333em;
+}
+.katex .sizing.reset-size7.size11,
+.katex .fontsize-ensurer.reset-size7.size11 {
+  font-size: 2.07333333em;
+}
+.katex .sizing.reset-size8.size1,
+.katex .fontsize-ensurer.reset-size8.size1 {
+  font-size: 0.34722222em;
+}
+.katex .sizing.reset-size8.size2,
+.katex .fontsize-ensurer.reset-size8.size2 {
+  font-size: 0.41666667em;
+}
+.katex .sizing.reset-size8.size3,
+.katex .fontsize-ensurer.reset-size8.size3 {
+  font-size: 0.48611111em;
+}
+.katex .sizing.reset-size8.size4,
+.katex .fontsize-ensurer.reset-size8.size4 {
+  font-size: 0.55555556em;
+}
+.katex .sizing.reset-size8.size5,
+.katex .fontsize-ensurer.reset-size8.size5 {
+  font-size: 0.625em;
+}
+.katex .sizing.reset-size8.size6,
+.katex .fontsize-ensurer.reset-size8.size6 {
+  font-size: 0.69444444em;
+}
+.katex .sizing.reset-size8.size7,
+.katex .fontsize-ensurer.reset-size8.size7 {
+  font-size: 0.83333333em;
+}
+.katex .sizing.reset-size8.size8,
+.katex .fontsize-ensurer.reset-size8.size8 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size8.size9,
+.katex .fontsize-ensurer.reset-size8.size9 {
+  font-size: 1.2em;
+}
+.katex .sizing.reset-size8.size10,
+.katex .fontsize-ensurer.reset-size8.size10 {
+  font-size: 1.44027778em;
+}
+.katex .sizing.reset-size8.size11,
+.katex .fontsize-ensurer.reset-size8.size11 {
+  font-size: 1.72777778em;
+}
+.katex .sizing.reset-size9.size1,
+.katex .fontsize-ensurer.reset-size9.size1 {
+  font-size: 0.28935185em;
+}
+.katex .sizing.reset-size9.size2,
+.katex .fontsize-ensurer.reset-size9.size2 {
+  font-size: 0.34722222em;
+}
+.katex .sizing.reset-size9.size3,
+.katex .fontsize-ensurer.reset-size9.size3 {
+  font-size: 0.40509259em;
+}
+.katex .sizing.reset-size9.size4,
+.katex .fontsize-ensurer.reset-size9.size4 {
+  font-size: 0.46296296em;
+}
+.katex .sizing.reset-size9.size5,
+.katex .fontsize-ensurer.reset-size9.size5 {
+  font-size: 0.52083333em;
+}
+.katex .sizing.reset-size9.size6,
+.katex .fontsize-ensurer.reset-size9.size6 {
+  font-size: 0.5787037em;
+}
+.katex .sizing.reset-size9.size7,
+.katex .fontsize-ensurer.reset-size9.size7 {
+  font-size: 0.69444444em;
+}
+.katex .sizing.reset-size9.size8,
+.katex .fontsize-ensurer.reset-size9.size8 {
+  font-size: 0.83333333em;
+}
+.katex .sizing.reset-size9.size9,
+.katex .fontsize-ensurer.reset-size9.size9 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size9.size10,
+.katex .fontsize-ensurer.reset-size9.size10 {
+  font-size: 1.20023148em;
+}
+.katex .sizing.reset-size9.size11,
+.katex .fontsize-ensurer.reset-size9.size11 {
+  font-size: 1.43981481em;
+}
+.katex .sizing.reset-size10.size1,
+.katex .fontsize-ensurer.reset-size10.size1 {
+  font-size: 0.24108004em;
+}
+.katex .sizing.reset-size10.size2,
+.katex .fontsize-ensurer.reset-size10.size2 {
+  font-size: 0.28929605em;
+}
+.katex .sizing.reset-size10.size3,
+.katex .fontsize-ensurer.reset-size10.size3 {
+  font-size: 0.33751205em;
+}
+.katex .sizing.reset-size10.size4,
+.katex .fontsize-ensurer.reset-size10.size4 {
+  font-size: 0.38572806em;
+}
+.katex .sizing.reset-size10.size5,
+.katex .fontsize-ensurer.reset-size10.size5 {
+  font-size: 0.43394407em;
+}
+.katex .sizing.reset-size10.size6,
+.katex .fontsize-ensurer.reset-size10.size6 {
+  font-size: 0.48216008em;
+}
+.katex .sizing.reset-size10.size7,
+.katex .fontsize-ensurer.reset-size10.size7 {
+  font-size: 0.57859209em;
+}
+.katex .sizing.reset-size10.size8,
+.katex .fontsize-ensurer.reset-size10.size8 {
+  font-size: 0.69431051em;
+}
+.katex .sizing.reset-size10.size9,
+.katex .fontsize-ensurer.reset-size10.size9 {
+  font-size: 0.83317261em;
+}
+.katex .sizing.reset-size10.size10,
+.katex .fontsize-ensurer.reset-size10.size10 {
+  font-size: 1em;
+}
+.katex .sizing.reset-size10.size11,
+.katex .fontsize-ensurer.reset-size10.size11 {
+  font-size: 1.19961427em;
+}
+.katex .sizing.reset-size11.size1,
+.katex .fontsize-ensurer.reset-size11.size1 {
+  font-size: 0.20096463em;
+}
+.katex .sizing.reset-size11.size2,
+.katex .fontsize-ensurer.reset-size11.size2 {
+  font-size: 0.24115756em;
+}
+.katex .sizing.reset-size11.size3,
+.katex .fontsize-ensurer.reset-size11.size3 {
+  font-size: 0.28135048em;
+}
+.katex .sizing.reset-size11.size4,
+.katex .fontsize-ensurer.reset-size11.size4 {
+  font-size: 0.32154341em;
+}
+.katex .sizing.reset-size11.size5,
+.katex .fontsize-ensurer.reset-size11.size5 {
+  font-size: 0.36173633em;
+}
+.katex .sizing.reset-size11.size6,
+.katex .fontsize-ensurer.reset-size11.size6 {
+  font-size: 0.40192926em;
+}
+.katex .sizing.reset-size11.size7,
+.katex .fontsize-ensurer.reset-size11.size7 {
+  font-size: 0.48231511em;
+}
+.katex .sizing.reset-size11.size8,
+.katex .fontsize-ensurer.reset-size11.size8 {
+  font-size: 0.57877814em;
+}
+.katex .sizing.reset-size11.size9,
+.katex .fontsize-ensurer.reset-size11.size9 {
+  font-size: 0.69453376em;
+}
+.katex .sizing.reset-size11.size10,
+.katex .fontsize-ensurer.reset-size11.size10 {
+  font-size: 0.83360129em;
+}
+.katex .sizing.reset-size11.size11,
+.katex .fontsize-ensurer.reset-size11.size11 {
+  font-size: 1em;
+}
+.katex .delimsizing.size1 {
+  font-family: KaTeX_Size1;
+}
+.katex .delimsizing.size2 {
+  font-family: KaTeX_Size2;
+}
+.katex .delimsizing.size3 {
+  font-family: KaTeX_Size3;
+}
+.katex .delimsizing.size4 {
+  font-family: KaTeX_Size4;
+}
+.katex .delimsizing.mult .delim-size1 > span {
+  font-family: KaTeX_Size1;
+}
+.katex .delimsizing.mult .delim-size4 > span {
+  font-family: KaTeX_Size4;
+}
+.katex .nulldelimiter {
+  display: inline-block;
+  width: 0.12em;
+}
+.katex .delimcenter {
+  position: relative;
+}
+.katex .op-symbol {
+  position: relative;
+}
+.katex .op-symbol.small-op {
+  font-family: KaTeX_Size1;
+}
+.katex .op-symbol.large-op {
+  font-family: KaTeX_Size2;
+}
+.katex .op-limits > .vlist-t {
+  text-align: center;
+}
+.katex .accent > .vlist-t {
+  text-align: center;
+}
+.katex .accent .accent-body {
+  position: relative;
+}
+.katex .accent .accent-body:not(.accent-full) {
+  width: 0;
+}
+.katex .overlay {
+  display: block;
+}
+.katex .mtable .vertical-separator {
+  display: inline-block;
+  min-width: 1px;
+}
+.katex .mtable .arraycolsep {
+  display: inline-block;
+}
+.katex .mtable .col-align-c > .vlist-t {
+  text-align: center;
+}
+.katex .mtable .col-align-l > .vlist-t {
+  text-align: left;
+}
+.katex .mtable .col-align-r > .vlist-t {
+  text-align: right;
+}
+.katex .svg-align {
+  text-align: left;
+}
+.katex svg {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  fill-rule: nonzero;
+  fill-opacity: 1;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  stroke-opacity: 1;
+}
+.katex svg path {
+  stroke: none;
+}
+.katex img {
+  border-style: none;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+}
+.katex .stretchy {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.katex .stretchy::before,
+.katex .stretchy::after {
+  content: "";
+}
+.katex .hide-tail {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.katex .halfarrow-left {
+  position: absolute;
+  left: 0;
+  width: 50.2%;
+  overflow: hidden;
+}
+.katex .halfarrow-right {
+  position: absolute;
+  right: 0;
+  width: 50.2%;
+  overflow: hidden;
+}
+.katex .brace-left {
+  position: absolute;
+  left: 0;
+  width: 25.1%;
+  overflow: hidden;
+}
+.katex .brace-center {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  overflow: hidden;
+}
+.katex .brace-right {
+  position: absolute;
+  right: 0;
+  width: 25.1%;
+  overflow: hidden;
+}
+.katex .x-arrow-pad {
+  padding: 0 0.5em;
+}
+.katex .cd-arrow-pad {
+  padding: 0 0.55556em 0 0.27778em;
+}
+.katex .x-arrow,
+.katex .mover,
+.katex .munder {
+  text-align: center;
+}
+.katex .boxpad {
+  padding: 0 0.3em;
+}
+.katex .fbox,
+.katex .fcolorbox {
+  box-sizing: border-box;
+  border: 0.04em solid;
+}
+.katex .cancel-pad {
+  padding: 0 0.2em;
+}
+.katex .cancel-lap {
+  margin-left: -0.2em;
+  margin-right: -0.2em;
+}
+.katex .sout {
+  border-bottom-style: solid;
+  border-bottom-width: 0.08em;
+}
+.katex .angl {
+  box-sizing: border-box;
+  border-top: 0.049em solid;
+  border-right: 0.049em solid;
+  margin-right: 0.03889em;
+}
+.katex .anglpad {
+  padding: 0 0.03889em;
+}
+.katex .eqn-num::before {
+  counter-increment: katexEqnNo;
+  content: "(" counter(katexEqnNo) ")";
+}
+.katex .mml-eqn-num::before {
+  counter-increment: mmlEqnNo;
+  content: "(" counter(mmlEqnNo) ")";
+}
+.katex .mtr-glue {
+  width: 50%;
+}
+.katex .cd-vert-arrow {
+  display: inline-block;
+  position: relative;
+}
+.katex .cd-label-left {
+  display: inline-block;
+  position: absolute;
+  right: calc(50% + 0.3em);
+  text-align: left;
+}
+.katex .cd-label-right {
+  display: inline-block;
+  position: absolute;
+  left: calc(50% + 0.3em);
+  text-align: right;
+}
+.katex-display {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+}
+.katex-display > .katex {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+.katex-display > .katex > .katex-html {
+  display: block;
+  position: relative;
+}
+.katex-display > .katex > .katex-html > .tag {
+  position: absolute;
+  right: 0;
+}
+.katex-display.leqno > .katex > .katex-html > .tag {
+  left: 0;
+  right: auto;
+}
+.katex-display.fleqn > .katex {
+  text-align: left;
+  padding-left: 2em;
+}
+body {
+  counter-reset: katexEqnNo mmlEqnNo;
+}
+
+
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+</style>
+  
+  
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="minimum-backtest-length-analysis-a-comprehensive-guide">Minimum Backtest Length Analysis: A Comprehensive Guide</h1>
+<h2 class="atx" id="executive-summary">Executive Summary</h2>
+<p>Imagine you flip a coin 10 times and get 7 heads. Can you conclude the coin is biased? Probably not—you need more flips. The same principle applies to trading strategies. Minimum Backtest Length (MBL) Analysis tells you exactly how many trades you need to distinguish genuine skill from luck. This guide explains not just the formulas, but the deep reasoning behind every concept.</p>
+<h2 class="atx" id="table-of-contents">Table of Contents</h2>
+<ol>
+<li>The Core Problem: Why Sample Size Matters</li>
+<li>Understanding Statistical Significance in Trading</li>
+<li>The Sharpe Ratio and Its Hidden Complexity</li>
+<li>Building the MinBTL Formula from First Principles</li>
+<li>Why Options Break All the Rules (Non-I.I.D. Effects)</li>
+<li>Practical Adjustments for Real-World Trading</li>
+<li>Interpretation and Application</li>
+<li>Case Studies and Examples</li>
+</ol>
+<hr>
+<h2 class="atx" id="part-i-the-core-problem---why-sample-size-matters">Part I: The Core Problem - Why Sample Size Matters</h2>
+<h3 class="atx" id="the-fundamental-question">The Fundamental Question</h3>
+<p>Every trader faces the same dilemma: "Is my profitable backtest showing real skill or just random luck?"</p>
+<p>Consider two scenarios:</p>
+<ol>
+<li><strong>Strategy A</strong>: 50 trades, 60% win rate, Sharpe ratio of 1.5</li>
+<li><strong>Strategy B</strong>: 5,000 trades, 55% win rate, Sharpe ratio of 0.8</li>
+</ol>
+<p>Which would you trust more? Despite Strategy A's superior metrics, Strategy B's large sample size might make it more reliable. But how much data is "enough"?</p>
+<h3 class="atx" id="the-casino-analogy">The Casino Analogy</h3>
+<p>Casinos understand this perfectly. They don't care if someone wins big on a few hands—they care about the "law of large numbers." With enough plays, the house edge emerges. Similarly, we need enough trades for a strategy's true edge (or lack thereof) to emerge from the noise.</p>
+<h3 class="atx" id="what-mbl-tells-us">What MBL Tells Us</h3>
+<p>Minimum Backtest Length provides a precise answer: given your strategy's observed performance and characteristics, it calculates the minimum number of trades needed to achieve statistical significance. It's like asking, "How many coin flips do I need to prove this coin is biased?"</p>
+<hr>
+<h2 class="atx" id="part-ii-understanding-statistical-significance-in-trading">Part II: Understanding Statistical Significance in Trading</h2>
+<h3 class="atx" id="what-does-andquotstatistically-significantandquot-really-mean">What Does "Statistically Significant" Really Mean?</h3>
+<p>Statistical significance isn't about importance—it's about confidence that results aren't due to chance. In trading context:</p>
+<ul>
+<li><strong>Null Hypothesis (H₀)</strong>: "This strategy has no edge (Sharpe = 0)"</li>
+<li><strong>Alternative Hypothesis (H₁)</strong>: "This strategy has positive edge (Sharpe &gt; 0)"</li>
+</ul>
+<p>We need enough evidence to reject H₀ with high confidence (typically 95%).</p>
+<h3 class="atx" id="the-critical-z-value-your-burden-of-proof">The Critical z-Value: Your Burden of Proof</h3>
+<p>The z-value represents how many standard deviations away from zero your results must be. Think of it as a "burden of proof":</p>
+<ul>
+<li><strong>90% confidence (z = 1.282)</strong>: "Somewhat sure" - Civil court standard</li>
+<li><strong>95% confidence (z = 1.645)</strong>: "Very sure" - Industry standard</li>
+<li><strong>99% confidence (z = 2.326)</strong>: "Beyond reasonable doubt" - Criminal court standard</li>
+</ul>
+<p><strong>Why z = 1.645 for 95% confidence?</strong>
+In a normal distribution, 95% of observations fall within ±1.96 standard deviations (two-tailed). For a one-tailed test (we only care if Sharpe &gt; 0), we use 1.645.</p>
+<h3 class="atx" id="type-i-and-type-ii-errors-in-trading">Type I and Type II Errors in Trading</h3>
+<ul>
+<li><p><strong>Type I Error (False Positive)</strong>: Deploying a strategy that has no real edge</p>
+<ul>
+<li><strong>Cost</strong>: Real money losses, opportunity cost</li>
+<li><strong>Controlled by</strong>: Significance level (α = 0.05 means 5% false positive rate)</li>
+</ul>
+</li>
+<li><p><strong>Type II Error (False Negative)</strong>: Rejecting a truly profitable strategy</p>
+<ul>
+<li><strong>Cost</strong>: Missed opportunities</li>
+<li><strong>Controlled by</strong>: Sample size (more data = more power to detect real effects)</li>
+</ul>
+</li>
+</ul>
+<p>MinBTL balances these by ensuring enough data to maintain low error rates.</p>
+<hr>
+<h2 class="atx" id="part-iii-the-sharpe-ratio-and-its-hidden-complexity">Part III: The Sharpe Ratio and Its Hidden Complexity</h2>
+<h3 class="atx" id="beyond-the-simple-formula">Beyond the Simple Formula</h3>
+<p>Everyone knows: Sharpe Ratio = (Return - Risk Free Rate) / Volatility</p>
+<p>But here's what's often missed: <strong>The Sharpe ratio itself is a random variable with its own distribution!</strong></p>
+<h3 class="atx" id="the-sharpe-ratioand39s-standard-error">The Sharpe Ratio's Standard Error</h3>
+<p>Just as a sample mean has a standard error, so does the Sharpe ratio. For normally distributed returns:</p>
+<pre><code class="fenced-code-block">SE(SR) = 1/√T</code></pre>
+<p>This means:</p>
+<ul>
+<li>100 trades: SE = 0.1 (your Sharpe could be ±0.1 from truth)</li>
+<li>1,000 trades: SE = 0.032 (much more precise)</li>
+</ul>
+<h3 class="atx" id="enter-skewness-and-kurtosis">Enter Skewness and Kurtosis</h3>
+<p>Real returns aren't normal. They have:</p>
+<ul>
+<li><strong>Skewness (γ)</strong>: Asymmetry in the distribution</li>
+<li><strong>Kurtosis (κ)</strong>: Fat tails / extreme events</li>
+</ul>
+<p>Bailey &amp; López de Prado derived the complete standard error formula:</p>
+<pre><code class="fenced-code-block">SE(SR) = √[(1 + γ·SR + (κ-3)·SR²/4) / T]</code></pre>
+<p><strong>Let's understand each term:</strong></p>
+<ol>
+<li><p><strong>Base term (1)</strong>: Even with perfect normality, there's inherent uncertainty</p>
+</li>
+<li><p><strong>Skewness term (γ·SR)</strong>:</p>
+<ul>
+<li><strong>Positive skew</strong> (lottery-like): Occasional huge wins inflate Sharpe</li>
+<li><strong>Negative skew</strong> (insurance-like): Occasional huge losses deflate Sharpe</li>
+<li><strong>Why it matters</strong>: A strategy with positive skew might look better than it really is</li>
+</ul>
+</li>
+<li><p><strong>Kurtosis term ((κ-3)·SR²/4)</strong>:</p>
+<ul>
+<li><strong>Excess kurtosis</strong> = κ - 3 (deviation from normal)</li>
+<li><strong>High kurtosis</strong>: More extreme events than normal distribution predicts</li>
+<li><strong>Why it matters</strong>: Fat tails mean your sample might miss rare disasters</li>
+</ul>
+</li>
+</ol>
+<h3 class="atx" id="example-the-deceptive-high-skew-strategy">Example: The Deceptive High-Skew Strategy</h3>
+<p>Imagine a strategy that:</p>
+<ul>
+<li>Wins $100 99% of the time</li>
+<li>Loses $10,000 1% of the time</li>
+<li>Expected value: 0.99×100 - 0.01×10,000 = -$1 (negative!)</li>
+</ul>
+<p>With only 50 trades, you might never see the disaster. The strategy appears profitable with high Sharpe. But the high positive skewness warns us: we need many more trades to capture the full distribution.</p>
+<hr>
+<h2 class="atx" id="part-iv-building-the-minbtl-formula-from-first-principles">Part IV: Building the MinBTL Formula from First Principles</h2>
+<h3 class="atx" id="step-1-the-statistical-test">Step 1: The Statistical Test</h3>
+<p>We want to test if our observed Sharpe ratio (SR̂) is significantly greater than a benchmark (SR*):</p>
+<pre><code class="fenced-code-block">Test statistic = (SR̂ - SR*) / SE(SR̂)</code></pre>
+<p>For significance at confidence level (1-α), we need:</p>
+<pre><code class="fenced-code-block">(SR̂ - SR*) / SE(SR̂) &gt; z₁₋α</code></pre>
+<h3 class="atx" id="step-2-solving-for-sample-size">Step 2: Solving for Sample Size</h3>
+<p>Rearranging the inequality:</p>
+<pre><code class="fenced-code-block">SR̂ - SR* &gt; z₁₋α × SE(SR̂)</code></pre>
+<p>Substituting the standard error formula:</p>
+<pre><code class="fenced-code-block">SR̂ - SR* &gt; z₁₋α × √[(1 + γ·SR̂ + (κ-3)·SR̂²/4) / T]</code></pre>
+<p>Squaring both sides and solving for T:</p>
+<pre><code class="fenced-code-block">T &gt; [1 + γ·SR̂ + (κ-3)·SR̂²/4] × z²₁₋α / (SR̂ - SR*)²</code></pre>
+<p><strong>This is the Minimum Backtest Length (MinBTL) formula!</strong></p>
+<h3 class="atx" id="step-3-understanding-what-drives-minbtl">Step 3: Understanding What Drives MinBTL</h3>
+<p>The formula reveals four key drivers:</p>
+<ol>
+<li><p><strong>Sharpe Difference (SR̂ - SR*)</strong>: Smaller difference = need more data</p>
+<ul>
+<li>Testing SR=0.1 vs 0 needs more data than SR=1.0 vs 0</li>
+</ul>
+</li>
+<li><p><strong>Confidence Level (z₁₋α)</strong>: Higher confidence = need more data</p>
+<ul>
+<li>99% confidence needs 2.5× more data than 90%</li>
+</ul>
+</li>
+<li><p><strong>Skewness (γ)</strong>: More asymmetry = need more data</p>
+<ul>
+<li>Lottery-like returns are harder to validate</li>
+</ul>
+</li>
+<li><p><strong>Kurtosis (κ)</strong>: Fatter tails = need more data</p>
+<ul>
+<li>Rare events require large samples to observe</li>
+</ul>
+</li>
+</ol>
+<h3 class="atx" id="intuitive-examples">Intuitive Examples</h3>
+<p><strong>Normal Strategy (γ=0, κ=3)</strong>:</p>
+<ul>
+<li>Sharpe = 0.5, testing &gt; 0, 95% confidence</li>
+<li>MinBTL = 1 × 1.645² / 0.5² = 11 trades</li>
+</ul>
+<p><strong>Options Strategy (γ=2, κ=10)</strong>:</p>
+<ul>
+<li>Same Sharpe = 0.5</li>
+<li>MinBTL = [1 + 2×0.5 + 7×0.25/4] × 1.645² / 0.5² = 27 trades</li>
+</ul>
+<p>The non-normal characteristics more than double the requirement!</p>
+<hr>
+<h2 class="atx" id="part-v-why-options-break-all-the-rules-non-iid-effects">Part V: Why Options Break All the Rules (Non-I.I.D. Effects)</h2>
+<h3 class="atx" id="what-does-iid-mean-and-why-should-you-care">What Does I.I.D. Mean and Why Should You Care?</h3>
+<p><strong>I.I.D. = Independent and Identically Distributed</strong></p>
+<ol>
+<li><strong>Independent</strong>: Each trade's outcome doesn't affect the next</li>
+<li><strong>Identically Distributed</strong>: All trades come from the same probability distribution</li>
+</ol>
+<p>Think of it like this:</p>
+<ul>
+<li><strong>I.I.D. Example</strong>: Flipping a fair coin repeatedly</li>
+<li><strong>Non-I.I.D. Example</strong>: Drawing cards without replacement</li>
+</ul>
+<p><strong>The Problem</strong>: All our formulas assume I.I.D. When this breaks (as it does with options), we need adjustments.</p>
+<h3 class="atx" id="how-options-violate-independence">How Options Violate Independence</h3>
+<h4 class="atx" id="1-autocorrelation-when-the-past-predicts-the-future">1. Autocorrelation: When the Past Predicts the Future</h4>
+<p><strong>What It Is</strong>: Today's returns correlate with yesterday's (and last week's, etc.)</p>
+<p><strong>Why It Happens in Options</strong>:</p>
+<ul>
+<li><strong>Volatility Clustering</strong>: After VIX spikes, it stays elevated for days/weeks</li>
+<li><strong>Momentum</strong>: Trends persist, especially in volatility</li>
+<li><strong>Mean Reversion</strong>: Extreme moves often reverse</li>
+</ul>
+<p><strong>The Statistical Impact</strong>:
+Imagine taking 100 temperature readings to test a thermometer, but taking them all in one hour. They're highly correlated—you don't really have 100 independent data points.</p>
+<p><strong>Measuring Autocorrelation</strong>:</p>
+<pre><code class="fenced-code-block">ρ(k) = Corr(Return_t, Return_{t-k})</code></pre>
+<p>If ρ(1) = 0.5, consecutive returns are 50% correlated!</p>
+<h4 class="atx" id="2-heteroskedasticity-when-volatility-isnand39t-constant">2. Heteroskedasticity: When Volatility Isn't Constant</h4>
+<p><strong>What It Is</strong>: The variance of returns changes over time</p>
+<p><strong>Why It Happens in Options</strong>:</p>
+<ul>
+<li>VIX can range from 10 to 80</li>
+<li>Options prices directly depend on volatility</li>
+<li>Different strikes/expirations behave differently in different vol regimes</li>
+</ul>
+<p><strong>The Problem</strong>: 
+Standard formulas assume constant variance. When volatility clusters, your standard errors are wrong, confidence intervals are unreliable, and you might think you have significance when you don't.</p>
+<h3 class="atx" id="how-options-violate-identical-distribution">How Options Violate Identical Distribution</h3>
+<h4 class="atx" id="regime-changes-when-the-rules-change">Regime Changes: When the Rules Change</h4>
+<p>Markets operate under different "regimes":</p>
+<ol>
+<li><p><strong>Low Vol Regime</strong> (VIX &lt; 15):</p>
+<ul>
+<li>Iron condors print money</li>
+<li>Theta decay dominates</li>
+<li>Small, predictable moves</li>
+</ul>
+</li>
+<li><p><strong>High Vol Regime</strong> (VIX &gt; 25):</p>
+<ul>
+<li>Gamma risk explodes</li>
+<li>Gap risk increases</li>
+<li>Traditional strategies fail</li>
+</ul>
+</li>
+<li><p><strong>Transition Periods</strong>:</p>
+<ul>
+<li>Vol of vol increases</li>
+<li>Correlations break down</li>
+<li>Nothing works as expected</li>
+</ul>
+</li>
+</ol>
+<p><strong>The Problem</strong>: A strategy optimized in one regime may fail catastrophically in another. You need data from ALL regimes.</p>
+<hr>
+<h2 class="atx" id="part-vi-practical-adjustments-for-real-world-trading">Part VI: Practical Adjustments for Real-World Trading</h2>
+<h3 class="atx" id="1-autocorrelation-adjustment-finding-true-independent-information">1. Autocorrelation Adjustment: Finding True Independent Information</h3>
+<p><strong>The Concept</strong>: When returns are correlated, you have less independent information than the number of trades suggests.</p>
+<p><strong>The Mathematics</strong>:</p>
+<p>First, calculate the autocorrelation function:</p>
+<pre><code class="fenced-code-block">ρ(k) = Cov(r_t, r_{t-k}) / Var(r_t)</code></pre>
+<p>Then, compute effective sample size:</p>
+<pre><code class="fenced-code-block">n_eff = n / (1 + 2 × Σ_{k=1}^K ρ(k))</code></pre>
+<p>Where K is chosen using Bartlett's criterion: include lags where |ρ(k)| &gt; 2/√n</p>
+<p><strong>Intuitive Example</strong>:</p>
+<ul>
+<li>You have 1,000 trades</li>
+<li>ρ(1) = 0.4, ρ(2) = 0.2, others ≈ 0</li>
+<li>n_eff = 1,000 / (1 + 2×(0.4 + 0.2)) = 1,000 / 2.2 = 455</li>
+</ul>
+<p>Your 1,000 trades only contain the information of 455 independent trades!</p>
+<p><strong>Adjustment Factor</strong>:</p>
+<pre><code class="fenced-code-block">Autocorrelation Factor = n / n_eff = 1,000 / 455 = 2.2</code></pre>
+<h3 class="atx" id="2-hac-standard-errors-robust-uncertainty-in-a-non-iid-world">2. HAC Standard Errors: Robust Uncertainty in a Non-I.I.D. World</h3>
+<p><strong>The Problem</strong>: With autocorrelation and changing volatility, simple standard errors are wrong.</p>
+<p><strong>The Solution</strong>: Newey-West HAC (Heteroskedasticity and Autocorrelation Consistent) estimator</p>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>Calculate autocovariances up to lag L</li>
+<li>Apply Bartlett kernel weights (downweight distant lags)</li>
+<li>Sum to get robust variance estimate</li>
+</ol>
+<pre><code class="fenced-code-block">SE_HAC = √[Σ_{j=0}^L w_j × γ_j / T]</code></pre>
+<p>Where:</p>
+<ul>
+<li>γ_j = j-th order autocovariance</li>
+<li>w_j = 1 - j/(L+1) (Bartlett weights)</li>
+<li>L = floor(T^(1/4)) (optimal lag selection)</li>
+</ul>
+<p><strong>Why This Matters</strong>: Your Sharpe ratio might have SE = 0.1 under I.I.D. assumptions, but SE_HAC = 0.2 in reality. This doubles your MinBTL!</p>
+<h3 class="atx" id="3-regime-detection-ensuring-youand39ve-seen-all-market-conditions">3. Regime Detection: Ensuring You've Seen All Market Conditions</h3>
+<p><strong>Implementation</strong>:</p>
+<ol>
+<li><p><strong>Calculate Rolling Volatility</strong>:</p>
+<pre><code class="fenced-code-block">σ_t = √[Σ_{i=1}^{20} (r_{t-i} - μ_{20})² / 20]</code></pre>
+</li>
+<li><p><strong>Classify Regimes</strong>:</p>
+<ul>
+<li>Low: σ_t &lt; 33rd percentile</li>
+<li>Medium: 33rd ≤ σ_t ≤ 67th percentile</li>
+<li>High: σ_t &gt; 67th percentile</li>
+</ul>
+</li>
+<li><p><strong>Count Transitions</strong>:
+Each regime change represents a shift in market dynamics</p>
+</li>
+<li><p><strong>Adjustment Formula</strong>:</p>
+<pre><code class="fenced-code-block">Regime Factor = 1 + 2 × (Regime Changes / Total Periods)</code></pre>
+</li>
+</ol>
+<p><strong>Intuition</strong>: If your backtest covers only a bull market, you have no idea how the strategy performs in crisis. More regime diversity = more confidence in results.</p>
+<h3 class="atx" id="4-tail-risk-adjustment-accounting-for-black-swans">4. Tail Risk Adjustment: Accounting for Black Swans</h3>
+<p><strong>The Concept</strong>: Options strategies often have asymmetric payoffs—many small wins, occasional catastrophic losses.</p>
+<p><strong>Key Metrics</strong>:</p>
+<ol>
+<li><p><strong>Value at Risk (VaR)</strong>:</p>
+<pre><code class="fenced-code-block">VaR_95 = 5th percentile of return distribution</code></pre>
+<p>"We expect to lose no more than VaR_95 on 95% of days"</p>
+</li>
+<li><p><strong>Conditional Value at Risk (CVaR)</strong>:</p>
+<pre><code class="fenced-code-block">CVaR_95 = E[Return | Return &lt; VaR_95]</code></pre>
+<p>"When we breach VaR, average loss is CVaR"</p>
+</li>
+<li><p><strong>Tail Risk Ratio</strong>:</p>
+<pre><code class="fenced-code-block">Tail Ratio = |CVaR_95| / |VaR_95|</code></pre>
+</li>
+</ol>
+<p><strong>Adjustment Logic</strong>:</p>
+<ul>
+<li>If Tail Ratio &gt; 1.5: Losses beyond VaR are disproportionately large</li>
+<li>Apply factor of 1.5 to MinBTL</li>
+<li>Why? You need more data to ensure you've captured these rare but critical events</li>
+</ul>
+<p><strong>Example</strong>: </p>
+<ul>
+<li>VaR_95 = -<span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:1em;vertical-align:-0.25em;" class="strut"></span><span class="mord">1</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">000</span><span class="mopen">(</span><span class="mord">5</span></span></span></span>1,000+)</li>
+<li>CVaR_95 = -<span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span class="base"><span style="height:1em;vertical-align:-0.25em;" class="strut"></span><span class="mord">3</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord">000</span><span class="mopen">(</span><span style="margin-right:0.02691em;" class="mord mathnormal">w</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">nba</span><span class="mord mathnormal">dd</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ys</span><span class="mord mathnormal">hi</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span style="margin-right:0.1667em;" class="mspace"></span><span class="mord mathnormal">a</span><span style="margin-right:0.03588em;" class="mord mathnormal">v</span><span style="margin-right:0.02778em;" class="mord mathnormal">er</span><span class="mord mathnormal">a</span><span style="margin-right:0.03588em;" class="mord mathnormal">g</span><span class="mord mathnormal">e</span><span style="margin-right:0.01968em;" class="mord mathnormal">l</span><span class="mord mathnormal">oss</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span></span></span></span>3,000)</li>
+<li>Tail Ratio = 3.0 (extreme tail risk!)</li>
+</ul>
+<h3 class="atx" id="5-multiple-testing-adjustment-the-researcherand39s-degrees-of-freedom">5. Multiple Testing Adjustment: The Researcher's Degrees of Freedom</h3>
+<p><strong>The Problem</strong>: If you test 100 parameter sets and pick the best, you're more likely to find false positives.</p>
+<p><strong>Bailey's Approximation</strong>:</p>
+<pre><code class="fenced-code-block">Adjusted MinBTL = Base MinBTL × (1 + log(N_trials) / 10)</code></pre>
+<p><strong>Intuition</strong>: Each additional parameter combination tested increases the chance of finding spurious patterns. This adjustment compensates.</p>
+<hr>
+<h2 class="atx" id="part-vii-putting-it-all-together---complete-framework">Part VII: Putting It All Together - Complete Framework</h2>
+<h3 class="atx" id="the-full-adjusted-formula">The Full Adjusted Formula</h3>
+<pre><code class="fenced-code-block">MinBTL_final = MinBTL_base × Π(Adjustment Factors)</code></pre>
+<p>Where:</p>
+<pre><code class="fenced-code-block">MinBTL_base = [1 + γ·SR̂ + (κ-3)·SR̂²/4] × z²₁₋α / (SR̂ - SR*)²
+
+Adjustment Factors:
+- Autocorrelation: n / n_eff
+- HAC: (SE_HAC / SE_standard)²
+- Regime: 1 + 2 × (Regime Changes / T)
+- Tail Risk: max(1, |CVaR| / |VaR|)
+- Multiple Testing: 1 + log(N_trials) / 10</code></pre>
+<h3 class="atx" id="real-world-example-spx-0-dte-iron-condor">Real-World Example: SPX 0 DTE Iron Condor</h3>
+<p>Let's work through a complete example:</p>
+<p><strong>Given Data</strong>:</p>
+<ul>
+<li>Total trades: 659</li>
+<li>Average P/L: $1,831.78</li>
+<li>Std Dev: $11,772.31</li>
+<li>Sharpe (per trade): 0.1554</li>
+<li>Annualized Sharpe: 2.467</li>
+<li>Skewness: 23.491 (extremely right-skewed!)</li>
+<li>Kurtosis: 600+ (massive fat tails!)</li>
+</ul>
+<p><strong>Step 1: Base MinBTL</strong></p>
+<pre><code class="fenced-code-block">SE adjustment = 1 + 23.491×0.1554 + (600-3)×0.1554²/4
+              = 1 + 3.65 + 3.60
+              = 8.25
+
+MinBTL_base = 8.25 × 1.645² / 0.1554²
+            = 8.25 × 2.70 / 0.0241
+            = 924 trades</code></pre>
+<p><strong>Step 2: Autocorrelation (hypothetical)</strong></p>
+<ul>
+<li>Lag-1 autocorr: 0.35</li>
+<li>Lag-2 autocorr: 0.20</li>
+<li>Effective size: 659 / (1 + 2×0.55) = 310</li>
+<li>Factor: 659/310 = 2.13</li>
+</ul>
+<p><strong>Step 3: Regime Changes</strong></p>
+<ul>
+<li>Detected: 15 regime changes</li>
+<li>Factor: 1 + 2×(15/659) = 1.045</li>
+</ul>
+<p><strong>Step 4: Tail Risk</strong></p>
+<ul>
+<li>VaR_95: -$15,000</li>
+<li>CVaR_95: -$25,000</li>
+<li>Factor: 25,000/15,000 = 1.67</li>
+</ul>
+<p><strong>Step 5: Final Calculation</strong></p>
+<pre><code class="fenced-code-block">MinBTL_final = 924 × 2.13 × 1.045 × 1.67
+             = 3,435 trades</code></pre>
+<p><strong>Conclusion</strong>: </p>
+<ul>
+<li>Required: 3,435 trades</li>
+<li>Actual: 659 trades</li>
+<li>Completion: 19%</li>
+</ul>
+<p>This backtest is severely underpowered. Results are not statistically meaningful.</p>
+<hr>
+<h2 class="atx" id="part-viii-interpretation-guidelines-and-best-practices">Part VIII: Interpretation Guidelines and Best Practices</h2>
+<h3 class="atx" id="understanding-your-results">Understanding Your Results</h3>
+<table>
+<thead>
+<tr>
+<th>Completion Ratio</th>
+<th>Interpretation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; 10%</td>
+<td>Worthless</td>
+<td>Discard results entirely</td>
+</tr>
+<tr>
+<td>10-25%</td>
+<td>Severely Underpowered</td>
+<td>Continue collecting data</td>
+</tr>
+<tr>
+<td>25-50%</td>
+<td>Significantly Underpowered</td>
+<td>Very preliminary, don't trade</td>
+</tr>
+<tr>
+<td>50-75%</td>
+<td>Moderately Underpowered</td>
+<td>Promising but needs more data</td>
+</tr>
+<tr>
+<td>75-100%</td>
+<td>Slightly Underpowered</td>
+<td>Consider paper trading</td>
+</tr>
+<tr>
+<td>≥ 100%</td>
+<td>Adequately Powered</td>
+<td>May consider live trading</td>
+</tr>
+</tbody></table>
+<h3 class="atx" id="red-flags-to-watch-for">Red Flags to Watch For</h3>
+<ol>
+<li><p><strong>Extreme Skewness (|γ| &gt; 2)</strong></p>
+<ul>
+<li>Indicates rare, large events dominate</li>
+<li>Need much larger samples</li>
+<li>Consider log transforms</li>
+</ul>
+</li>
+<li><p><strong>Extreme Kurtosis (κ &gt; 10)</strong></p>
+<ul>
+<li>Fat tails present</li>
+<li>Standard models may fail</li>
+<li>Consider robust methods</li>
+</ul>
+</li>
+<li><p><strong>High Autocorrelation (ρ &gt; 0.3)</strong></p>
+<ul>
+<li>Returns strongly clustered</li>
+<li>Effective sample size much smaller</li>
+<li>Consider block bootstrap methods</li>
+</ul>
+</li>
+<li><p><strong>Multiple Regime Changes</strong></p>
+<ul>
+<li>Strategy unstable across conditions</li>
+<li>May need regime-specific analysis</li>
+<li>Consider adaptive strategies</li>
+</ul>
+</li>
+</ol>
+<h3 class="atx" id="best-practices-for-options-traders">Best Practices for Options Traders</h3>
+<ol>
+<li><p><strong>Data Requirements by Strategy Type</strong>:</p>
+<ul>
+<li><strong>Directional (calls/puts)</strong>: Base MinBTL × 1.5</li>
+<li><strong>Spreads</strong>: Base MinBTL × 2</li>
+<li><strong>Iron Condors/Butterflies</strong>: Base MinBTL × 3</li>
+<li><strong>Exotic structures</strong>: Base MinBTL × 4</li>
+</ul>
+</li>
+<li><p><strong>Minimum Time Periods</strong>:</p>
+<ul>
+<li>Must include at least one VIX &gt; 30 period</li>
+<li>Must include at least one major drawdown</li>
+<li>Must include multiple expiration cycles</li>
+<li>Ideal: 3-5 years for daily strategies</li>
+</ul>
+</li>
+<li><p><strong>Parameter Selection</strong>:</p>
+<ul>
+<li>Use 95% confidence minimum</li>
+<li>Test against SR* = 0.5 annually (not just 0)</li>
+<li>Apply all adjustments for options</li>
+<li>Document every assumption</li>
+</ul>
+</li>
+<li><p><strong>Validation Process</strong>:</p>
+<ul>
+<li>Calculate MinBTL before starting backtest</li>
+<li>If underpowered, extend data or simplify strategy</li>
+<li>Combine with Walk-Forward Analysis</li>
+<li>Perform out-of-sample testing in paper trading</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="atx" id="conclusion-the-hard-truth-about-backtesting">Conclusion: The Hard Truth About Backtesting</h2>
+<p>Minimum Backtest Length Analysis reveals an uncomfortable reality: most options backtests are statistically meaningless. The combination of:</p>
+<ul>
+<li>Extreme skewness and kurtosis</li>
+<li>Strong autocorrelation</li>
+<li>Regime dependencies</li>
+<li>Tail risks</li>
+</ul>
+<p>...means that options strategies need far more data than most traders collect.</p>
+<p><strong>The Key Takeaway</strong>: That profitable 6-month backtest with a Sharpe of 2.5? It's probably noise. Real validation requires:</p>
+<ul>
+<li>Thousands of trades (not hundreds)</li>
+<li>Multiple market regimes</li>
+<li>Proper statistical adjustments</li>
+<li>Healthy skepticism</li>
+</ul>
+<p>Remember: In options trading, as in science, extraordinary claims (high Sharpes) require extraordinary evidence (massive samples). MinBTL tells you exactly how extraordinary that evidence needs to be.</p>
+<p><strong>Final Thought</strong>: If your backtest doesn't meet MinBTL requirements, you're not ready to trade—you're still in the data collection phase. And that's okay. Better to know the truth than to lose real money on statistical mirages.</p>
+</article>
+  
+</body>
+</html>
