@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharpe Ratio Equity Curves</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .chart-container {
+            position: relative;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .chart-title {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        canvas {
+            width: 100%;
+            height: 300px;
+        }
+        .metrics {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .metric-label {
+            color: #666;
+        }
+        .metric-value {
+            font-weight: bold;
+        }
+        .explanation {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #2196F3;
+        }
+        .explanation h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+        .ideal-characteristics {
+            background: #f0f8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        .warning {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #FF9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What Different Sharpe Ratios Look Like</h1>
+        <p class="subtitle">Equity curves for daily options trading strategies over 1000 trading days</p>
+        
+        <div class="charts-grid">
+            <div class="chart-container">
+                <div class="chart-title">Poor Strategy (Sharpe = 0.2)</div>
+                <canvas id="chart1"></canvas>
+                <div class="metrics">
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Ratio:</span>
+                        <span class="metric-value" style="color: #e74c3c;">0.20</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Annual Return:</span>
+                        <span class="metric-value">12%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility:</span>
+                        <span class="metric-value">60%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Max Drawdown:</span>
+                        <span class="metric-value" style="color: #e74c3c;">-45%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Decent Strategy (Sharpe = 1.0)</div>
+                <canvas id="chart2"></canvas>
+                <div class="metrics">
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Ratio:</span>
+                        <span class="metric-value" style="color: #f39c12;">1.00</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Annual Return:</span>
+                        <span class="metric-value">20%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility:</span>
+                        <span class="metric-value">20%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Max Drawdown:</span>
+                        <span class="metric-value" style="color: #f39c12;">-15%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Good Strategy (Sharpe = 1.5)</div>
+                <canvas id="chart3"></canvas>
+                <div class="metrics">
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Ratio:</span>
+                        <span class="metric-value" style="color: #27ae60;">1.50</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Annual Return:</span>
+                        <span class="metric-value">30%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility:</span>
+                        <span class="metric-value">20%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Max Drawdown:</span>
+                        <span class="metric-value" style="color: #27ae60;">-10%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">Excellent Strategy (Sharpe = 2.5)</div>
+                <canvas id="chart4"></canvas>
+                <div class="metrics">
+                    <div class="metric-row">
+                        <span class="metric-label">Sharpe Ratio:</span>
+                        <span class="metric-value" style="color: #2ecc71;">2.50</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Annual Return:</span>
+                        <span class="metric-value">30%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Volatility:</span>
+                        <span class="metric-value">12%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Max Drawdown:</span>
+                        <span class="metric-value" style="color: #2ecc71;">-5%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ideal-characteristics">
+            <h3>🎯 Characteristics of an Excellent Sharpe Ratio Curve</h3>
+            <ul>
+                <li><strong>Shape:</strong> Nearly straight line trending upward at approximately 45° angle</li>
+                <li><strong>Smoothness:</strong> Minimal jaggedness - the smoother, the better</li>
+                <li><strong>Consistency:</strong> Few and shallow drawdowns (temporary declines)</li>
+                <li><strong>Angle:</strong> Steeper is better, but only if volatility remains low</li>
+                <li><strong>Pattern:</strong> Steady, predictable growth rather than explosive gains followed by crashes</li>
+            </ul>
+            <p><strong>The ideal:</strong> A curve that looks like it was drawn with a ruler from bottom-left to top-right, with only minor deviations.</p>
+        </div>
+        
+        <div class="explanation">
+            <h3>📊 Understanding the Visualization</h3>
+            <p>Notice how as Sharpe ratio improves:</p>
+            <ul>
+                <li>The equity curve becomes <strong>smoother</strong> and more linear</li>
+                <li>Drawdowns become <strong>smaller and less frequent</strong></li>
+                <li>The path becomes more <strong>predictable</strong> and less erratic</li>
+                <li>The curve approaches a <strong>straight diagonal line</strong></li>
+            </ul>
+            <p>The Sharpe ratio essentially measures how straight and smooth your equity curve is relative to its upward slope.</p>
+        </div>
+        
+        <div class="warning">
+            <h3>⚠️ Important Considerations for Options Trading</h3>
+            <ul>
+                <li><strong>Iron Condors typically produce choppy curves</strong> due to their payoff structure (many small wins, occasional large losses)</li>
+                <li><strong>Daily options strategies often have lower Sharpe ratios</strong> due to transaction costs and gamma risk</li>
+                <li><strong>A Sharpe > 2.0 is extremely rare</strong> in real trading and should be viewed skeptically</li>
+                <li><strong>Consistency matters more than absolute returns</strong> - a steady 20% with low volatility beats a volatile 40%</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Function to generate realistic equity curves with different Sharpe ratios
+        function generateEquityCurve(days, annualReturn, annualVolatility, startValue = 10000) {
+            const dailyReturn = annualReturn / 252;
+            const dailyVol = annualVolatility / Math.sqrt(252);
+            
+            let values = [startValue];
+            let currentValue = startValue;
+            
+            for (let i = 1; i <= days; i++) {
+                // Generate random return with specified mean and volatility
+                const randomShock = (Math.random() - 0.5) * 2;
+                const dailyChange = dailyReturn + dailyVol * randomShock;
+                
+                // Add some realistic features for options trading
+                // Occasional larger moves (gap risk)
+                if (Math.random() < 0.02) { // 2% chance of larger move
+                    const gapMultiplier = 2 + Math.random() * 2;
+                    currentValue *= (1 + dailyChange * gapMultiplier);
+                } else {
+                    currentValue *= (1 + dailyChange);
+                }
+                
+                values.push(currentValue);
+            }
+            
+            return values;
+        }
+        
+        // Function to draw chart
+        function drawChart(canvasId, data, color) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.offsetWidth * 2;
+            canvas.height = canvas.offsetHeight * 2;
+            ctx.scale(2, 2);
+            
+            const width = canvas.offsetWidth;
+            const height = canvas.offsetHeight;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Find min and max for scaling
+            const minValue = Math.min(...data);
+            const maxValue = Math.max(...data);
+            const range = maxValue - minValue;
+            
+            // Draw grid lines
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 0.5;
+            
+            // Horizontal grid lines
+            for (let i = 0; i <= 5; i++) {
+                const y = (height / 5) * i;
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+            
+            // Draw the equity curve
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            
+            data.forEach((value, index) => {
+                const x = (index / (data.length - 1)) * width;
+                const y = height - ((value - minValue) / range) * height;
+                
+                if (index === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            
+            ctx.stroke();
+            
+            // Draw starting value line
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            const startY = height - ((10000 - minValue) / range) * height;
+            ctx.moveTo(0, startY);
+            ctx.lineTo(width, startY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+        
+        // Generate and draw all charts
+        const days = 1000;
+        
+        // Poor strategy: Low Sharpe (0.2)
+        const poorData = generateEquityCurve(days, 0.12, 0.60);
+        drawChart('chart1', poorData, '#e74c3c');
+        
+        // Decent strategy: Sharpe = 1.0
+        const decentData = generateEquityCurve(days, 0.20, 0.20);
+        drawChart('chart2', decentData, '#f39c12');
+        
+        // Good strategy: Sharpe = 1.5
+        const goodData = generateEquityCurve(days, 0.30, 0.20);
+        drawChart('chart3', goodData, '#27ae60');
+        
+        // Excellent strategy: Sharpe = 2.5
+        const excellentData = generateEquityCurve(days, 0.30, 0.12);
+        drawChart('chart4', excellentData, '#2ecc71');
+    </script>
+</body>
+</html>
